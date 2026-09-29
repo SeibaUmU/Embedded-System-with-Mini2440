@@ -1,0 +1,1 @@
+savedcmd_/home/seiba/Documents/BT/Driver/Vd2/second.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/seiba/Documents/BT/Driver/Vd2/second.ko /home/seiba/Documents/BT/Driver/Vd2/second.o /home/seiba/Documents/BT/Driver/Vd2/second.mod.o /home/seiba/Documents/BT/Driver/Vd2/.module-common.o

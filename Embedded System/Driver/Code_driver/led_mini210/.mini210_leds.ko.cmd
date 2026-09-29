@@ -1,0 +1,1 @@
+cmd_/home/embedded/Documents/driver/led_mini210/mini210_leds.ko := arm-linux-ld -EL -r  -T /home/embedded/Downloads/linux-3.0.8/scripts/module-common.lds --build-id  -o /home/embedded/Documents/driver/led_mini210/mini210_leds.ko /home/embedded/Documents/driver/led_mini210/mini210_leds.o /home/embedded/Documents/driver/led_mini210/mini210_leds.mod.o

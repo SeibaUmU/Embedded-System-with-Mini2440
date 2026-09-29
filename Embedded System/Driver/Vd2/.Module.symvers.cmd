@@ -1,0 +1,1 @@
+savedcmd_/home/seiba/Documents/BT/Driver/Vd2/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/seiba/Documents/BT/Driver/Vd2/Module.symvers -T /home/seiba/Documents/BT/Driver/Vd2/modules.order -i Module.symvers -e 

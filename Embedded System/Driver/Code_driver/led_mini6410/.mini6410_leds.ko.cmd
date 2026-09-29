@@ -1,0 +1,1 @@
+cmd_/home/embedded/Downloads/Code_driver/led_mini6410/mini6410_leds.ko := arm-linux-ld -EL -r  -T /home/embedded/Downloads/linux-2.6.38/scripts/module-common.lds --build-id  -o /home/embedded/Downloads/Code_driver/led_mini6410/mini6410_leds.ko /home/embedded/Downloads/Code_driver/led_mini6410/mini6410_leds.o /home/embedded/Downloads/Code_driver/led_mini6410/mini6410_leds.mod.o

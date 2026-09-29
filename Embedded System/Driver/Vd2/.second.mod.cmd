@@ -1,0 +1,1 @@
+savedcmd_/home/seiba/Documents/BT/Driver/Vd2/second.mod := printf '%s\n'   second.o | awk '!x[$$0]++ { print("/home/seiba/Documents/BT/Driver/Vd2/"$$0) }' > /home/seiba/Documents/BT/Driver/Vd2/second.mod

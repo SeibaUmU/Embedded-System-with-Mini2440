@@ -1,0 +1,1 @@
+savedcmd_/home/seiba/Documents/BT/Driver/first.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/seiba/Documents/BT/Driver/first.ko /home/seiba/Documents/BT/Driver/first.o /home/seiba/Documents/BT/Driver/first.mod.o /home/seiba/Documents/BT/Driver/.module-common.o

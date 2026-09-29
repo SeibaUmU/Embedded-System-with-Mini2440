@@ -1,0 +1,2 @@
+/home/embedded/Downloads/Code_driver/led_mini6410/mini6410_leds.ko
+/home/embedded/Downloads/Code_driver/led_mini6410/mini6410_leds.o

@@ -1,0 +1,1 @@
+savedcmd_/home/seiba/Documents/BT/Driver/Vd5/fifth.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/seiba/Documents/BT/Driver/Vd5/fifth.ko /home/seiba/Documents/BT/Driver/Vd5/fifth.o /home/seiba/Documents/BT/Driver/Vd5/fifth.mod.o /home/seiba/Documents/BT/Driver/Vd5/.module-common.o

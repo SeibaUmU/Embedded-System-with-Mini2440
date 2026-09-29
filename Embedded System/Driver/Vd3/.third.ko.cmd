@@ -1,0 +1,1 @@
+savedcmd_/home/seiba/Documents/BT/Driver/Vd3/third.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/seiba/Documents/BT/Driver/Vd3/third.ko /home/seiba/Documents/BT/Driver/Vd3/third.o /home/seiba/Documents/BT/Driver/Vd3/third.mod.o /home/seiba/Documents/BT/Driver/Vd3/.module-common.o

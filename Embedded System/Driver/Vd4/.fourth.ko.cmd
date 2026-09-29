@@ -1,0 +1,1 @@
+savedcmd_/home/seiba/Documents/BT/Driver/Vd4/fourth.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/seiba/Documents/BT/Driver/Vd4/fourth.ko /home/seiba/Documents/BT/Driver/Vd4/fourth.o /home/seiba/Documents/BT/Driver/Vd4/fourth.mod.o /home/seiba/Documents/BT/Driver/Vd4/.module-common.o

@@ -1,0 +1,1 @@
+cmd_/home/embedded/Downloads/Code_driver/second/second.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.2.0-23-generic/scripts/module-common.lds --build-id  -o /home/embedded/Downloads/Code_driver/second/second.ko /home/embedded/Downloads/Code_driver/second/second.o /home/embedded/Downloads/Code_driver/second/second.mod.o

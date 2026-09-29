@@ -1,0 +1,21 @@
+/* first.c – first device driver code */
+#include <linux/module.h>
+#include <linux/version.h>
+#include <linux/kernel.h>
+
+static int __init first_init(void) /* Constructor */
+{
+    printk("Welcome the first device driver");
+    return 0;
+}
+
+static void __exit first_exit(void) /* Destructor */
+{
+    printk("Good the first device driver");
+}
+
+module_init(first_init);
+module_exit(first_exit);
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Phan Tuan Anh");/* tac gia cua module */
+MODULE_DESCRIPTION("The simplest character device driver");/* mo ta chuc nang cua module */

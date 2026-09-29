@@ -1,0 +1,98 @@
+#include <linux/module.h>
+#include <linux/version.h>
+#include <linux/kernel.h>
+#include <linux/types.h>
+#include <linux/kdev_t.h>
+#include <linux/fs.h>
+#include <linux/device.h>
+#include <linux/cdev.h>
+
+struct char_driver{
+   dev_t major_num;
+   struct class *class_num;
+   struct device *dev_num;	
+   struct cdev cdev_num;
+}c_drv;
+
+static int my_open(struct inode *i, struct file *f)
+{
+   printk("Driver: open()\n");
+   return 0;
+}
+static int my_close(struct inode *i, struct file *f)
+{
+   printk("Driver: close()\n");
+   return 0;
+}
+static ssize_t my_read(struct file *f, char __user *buf, size_t len,loff_t *off)
+{
+   printk("Driver: read()\n");
+   return 0;
+}
+static ssize_t my_write(struct file *f, const char __user *buf, size_t len,loff_t *off)
+{
+   printk("Driver: write()\n");
+   return len;
+}
+
+static struct file_operations fops =
+{
+   .owner = THIS_MODULE,
+   .open = my_open,
+   .release = my_close,
+   .read = my_read,
+   .write = my_write
+};
+
+static int __init fifth_init(void) /* Constructor */
+{
+    int ret;    
+    printk(KERN_INFO "Namaskar: ofcd registered");
+    if ((ret = alloc_chrdev_region(&c_drv.major_num, 0, 1, "CharSample")) < 0)
+    {
+	printk("Failed to register device number dynamically \n");
+        return -1;
+    }
+    printk("Allocated device number (%d,%d)\n",MAJOR(c_drv.major_num),MINOR(c_drv.major_num));    	
+
+    if (IS_ERR(c_drv.class_num = class_create(THIS_MODULE, "CharClass")))
+    {
+	printk("Failed to create device class\n");
+        unregister_chrdev_region(c_drv.major_num, 1);
+        return -1;
+    }
+    if (IS_ERR(c_drv.dev_num = device_create(c_drv.class_num, NULL, c_drv.major_num, NULL, "CharDevice")))
+    {
+	printk("Failed to create a device \n");
+        class_destroy(c_drv.class_num);
+        unregister_chrdev_region(c_drv.major_num, 1);
+        return -1;
+    }
+
+    cdev_init(&c_drv.cdev_num, &fops);
+    if ((ret = cdev_add(&c_drv.cdev_num, c_drv.major_num, 1)) < 0)
+    {
+	printk("Failed to create entry points \n");
+        device_destroy(c_drv.class_num, c_drv.major_num);
+        class_destroy(c_drv.class_num);
+        unregister_chrdev_region(c_drv.major_num, 1);
+        return -1;
+    }
+    printk("Initialize char driver successfully\n");
+    return 0;
+}
+
+static void __exit fifth_exit(void) /* Destructor */
+{
+    cdev_del(&c_drv.cdev_num);
+    device_destroy(c_drv.class_num, c_drv.major_num);
+    class_destroy(c_drv.class_num);
+    unregister_chrdev_region(c_drv.major_num, 1);    
+}
+
+module_init(fifth_init);
+module_exit(fifth_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Phan Tuan Anh");
+MODULE_DESCRIPTION("Create entry points");

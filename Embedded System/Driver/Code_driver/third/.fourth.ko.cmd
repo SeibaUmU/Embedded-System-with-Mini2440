@@ -1,0 +1,1 @@
+cmd_/home/embedded/Documents/driver/bai4/fourth.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.2.0-23-generic/scripts/module-common.lds --build-id  -o /home/embedded/Documents/driver/bai4/fourth.ko /home/embedded/Documents/driver/bai4/fourth.o /home/embedded/Documents/driver/bai4/fourth.mod.o
